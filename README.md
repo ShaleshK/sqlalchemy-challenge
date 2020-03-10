@@ -17,7 +17,7 @@ row_df = row_df.set_index("date")
 row_df = row_df.sort_index()
 # row_df
 row_df.plot(rot=90)```
-!C:\Users\Shalesh Kumbhat\Documents\sqlalchemy-challenge\precipitation.png
+![Precipitation Bar Chart](C:\Users\Shalesh Kumbhat\Documents\sqlalchemy-challenge\precipitation.png)
 
 Here are the number of observations at each temperation at station USC005192821 during 8/23/16 - 8/23/17.
 ```year_ago_day = dt.date(2017,8,23)-dt.timedelta(days=365)
@@ -28,7 +28,7 @@ hist = big_station_df['tobs'].hist(bins=12)
 plt.xlabel("Temperature")
 plt.ylabel("# of Observations") 
 plt.title("Observed Temperatures at Station USC00519281")```
-!C:\Users\Shalesh Kumbhat\Documents\sqlalchemy-challenge\USC005192821.png
+![Temperature Bar Chart](C:\Users\Shalesh Kumbhat\Documents\sqlalchemy-challenge\USC005192821.png)
 
 ```from flask import request
 
@@ -66,4 +66,4 @@ ax.set(ylabel = "Temp (F)", xticks = range(xpos), xticklabels = 'a', title="Trip
 ax.margins(.2,.2)
 fig.tight_layout()
 fig.show()```
-!C:\Users\Shalesh Kumbhat\Documents\sqlalchemy-challenge\AvgTemp.png
+![Avg Temp Chart](C:\Users\Shalesh Kumbhat\Documents\sqlalchemy-challenge\AvgTemp.png)
