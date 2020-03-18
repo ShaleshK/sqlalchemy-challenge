@@ -33,7 +33,7 @@ plt.xlabel("Temperature")
 plt.ylabel("# of Observations") 
 plt.title("Observed Temperatures at Station USC00519281")
 ```
-![Temperature Bar Chart](USC005192821.png)
+![Temperature Bar Chart](USC00519281.png)
 
 ```python
 from flask import request
