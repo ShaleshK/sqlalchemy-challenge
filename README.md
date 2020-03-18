@@ -20,7 +20,7 @@ row_df = row_df.sort_index()
 # row_df
 row_df.plot(rot=90)
 ```
-![Precipitation Bar Chart]("precipitation.png")
+![Precipitation Bar Chart](precipitation.png)
 
 #### Here are the number of observations at each temperation at station USC005192821 during 8/23/16 - 8/23/17.
 ```python
@@ -33,7 +33,7 @@ plt.xlabel("Temperature")
 plt.ylabel("# of Observations") 
 plt.title("Observed Temperatures at Station USC00519281")
 ```
-![Temperature Bar Chart]("USC005192821.png")
+![Temperature Bar Chart](USC005192821.png)
 
 ```python
 from flask import request
@@ -79,4 +79,4 @@ ax.margins(.2,.2)
 fig.tight_layout()
 fig.show()
 ```
-![Avg Temp Chart]("AvgTemp.png")
+![Avg Temp Chart](AvgTemp.png)
