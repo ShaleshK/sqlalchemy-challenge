@@ -1,8 +1,6 @@
-# I want to find temperatures and precipitation in Hawaii for a given week between the last year of the sample,
-# starting in August 23, 2016 and ending August 23, 2017.  The data exists in sqlite:///Resources/hawaii.sqlite
-# and starts in September 2009 at 9 different observation stations around Hawaii.
+#### I want to find temperatures and precipitation in Hawaii for a given week between the last year of the sample,starting in August 23, 2016 and ending August 23, 2017.  The data exists in sqlite:///Resources/hawaii.sqlite and starts in September 2009 at 9 different observation stations around Hawaii.
 
-# find the last date in the sample and filter out precipitation in the last year of the sample
+#### find the last date in the sample and filter out precipitation in the last year of the sample
 ```python
 from matplotlib.dates import DateFormatter
 import matplotlib.dates as mdates
@@ -14,7 +12,7 @@ for row in session.query(Measurement.date, Measurement.prcp).\
     rows.append(row)
 ```
 
-# Save the query results as a Pandas DataFrame and set the index to the date column
+#### Save the query results as a Pandas DataFrame and set the index to the date column
 ```python
 row_df = pd.DataFrame.from_dict(rows)
 row_df = row_df.set_index("date")
@@ -24,7 +22,7 @@ row_df.plot(rot=90)
 ```
 ![Precipitation Bar Chart]("precipitation.png")
 
-# Here are the number of observations at each temperation at station USC005192821 during 8/23/16 - 8/23/17.
+#### Here are the number of observations at each temperation at station USC005192821 during 8/23/16 - 8/23/17.
 ```python
 year_ago_day = dt.date(2017,8,23)-dt.timedelta(days=365)
 row_df['date'] = pd.to_datetime(row_df['date'])
@@ -62,7 +60,7 @@ Measurement = Base.classes.measurement
 Station = Base.classes.station
 ```
 
-# calc_temps function returns temperatures from 2/28/12 to 3/05/12
+#### calc_temps function returns temperatures from 2/28/12 to 3/05/12
 ```python
 def calc_temps(start_date, end_date):
     return session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
@@ -70,7 +68,7 @@ def calc_temps(start_date, end_date):
         print(calc_temps('2012-02-28', '2012-03-05'))
 ```
 
-# code for an Average Temp Chart
+#### code for an Average Temp Chart
 ```python
 fig, ax = plt.subplots(figsize=plt.figaspect(2.))
 xpos = 1
